@@ -27,6 +27,10 @@
    ```
 
 4. If you wish to completely reset the model (remove all previously learned weights), navigate to "./GestProj/rootfold" and manually delete the file "model_lowres.keras". The program will initialize with a new model on the next startup.
+5. New training data generation can be done by running the "main.py" file and then entering $1$ into the console. Afterwards again choose option $1$ to proceed.
+6. Choosing option $1$ in the main page reveals some options to handle the dataset- including recording new data (as mentioned earlier), keeping the model up-to-date and viewing a log of different recording sessions.
+7. The on-screen instructions allow the user to delete an entire session's data in one go. It is useful if that session has become irrevalent/interferes with general learning of the model.
+8. During the first run of the program it's recommended to record at least a a couple of frames for every type, as to not run into any odd exceptions. 
 
 ## Gesture Recognition
 

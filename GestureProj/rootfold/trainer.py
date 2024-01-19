@@ -6,6 +6,7 @@ def train():
     import matplotlib.pyplot as plt
     import data_capture
     import global_main
+    import time
 
     # Load the saved model
     try:
@@ -38,8 +39,13 @@ def train():
     x_train, y_train = load_data(train_list)
     x_val, y_val = load_data(val_list)
 
+    #load model
+    model=keras.models.load_model('model_lowres.keras')
     # Train the model
+    train_start_time = time.time()
     history = model.fit(x_train, y_train, epochs=10, validation_data=(x_val, y_val))
+    train_end_time = time.time()
+    print("Training time: ", train_end_time - train_start_time, "seconds")
 
     # Save the model
     model.save('model_lowres.keras')

@@ -1,6 +1,28 @@
 # Gesture Recognition Program Readme
 
-**Note:** Ensure you are using Python 3.x (replace x with your particular version in the subsequent codes). It is recommended to use Python 3.11 for optimal compatibility.
+**Note:** Ensure you are using Python 3.x (replace x with your particular version in the subsequent codes). It is recommended to use Python 3.11 for optimal compatibility. As of now, this application is restricted to Linux Only. The latest version of this project can be installed directly using:
+```bash
+pip install GestureProj
+```
+For specific python version:
+```bash
+python3.x -m pip install GestureProj
+```
+Within Jupyter:
+
+```
+%pip install GestureProj
+```
+
+After installation:
+
+```python
+import GestureProj
+```
+This will start the program without much hassle. However, this is nowhere near a stable release and outright lacks the feature of removing all training data in one go (for satefy issues and time constraints).
+
+
+ Alternatively, for taking a closer look at the source and other details, we'll proceed with the following.
 
 ## Getting Started
 

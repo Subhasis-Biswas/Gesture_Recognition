@@ -25,7 +25,12 @@ def train():
     # Split the dataset into training and validation sets
     split = int(0.8 * len(full_filelist))
     train_list = full_filelist[:split]
-    val_list = full_filelist[split:]
+    #split the rest into validation and test sets
+    split_2 = int(0.5 * len(full_filelist[split:]))
+    val_list = full_filelist[split:split+split_2]
+    test_list = full_filelist[split+split_2:]
+
+
 
     def load_data(filelist):
         images = []
@@ -38,6 +43,7 @@ def train():
     # Load the training and validation sets
     x_train, y_train = load_data(train_list)
     x_val, y_val = load_data(val_list)
+    x_test, y_test = load_data(test_list)
 
     #load model
     model=keras.models.load_model('model_lowres.keras')
@@ -46,6 +52,7 @@ def train():
     history = model.fit(x_train, y_train, epochs=10, validation_data=(x_val, y_val))
     train_end_time = time.time()
     print("Training time: ", train_end_time - train_start_time, "seconds")
+    print("Test accuracy: ", model.evaluate(x_test, y_test)[1])
 
     # Save the model
     model.save('model_lowres.keras')

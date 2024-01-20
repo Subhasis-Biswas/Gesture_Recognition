@@ -7,3 +7,5 @@ module_root = os.path.dirname(module_path)
 sys.path.append(module_root)
 sys.path.append(module_root+'/'+'rootfold')
 os.chdir(module_root)
+
+import main

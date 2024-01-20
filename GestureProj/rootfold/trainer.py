@@ -7,7 +7,7 @@ def train():
     import data_capture
     import global_main
     import time
-
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     # Load the saved model
     try:
         model = keras.models.load_model('model_lowres.keras')
